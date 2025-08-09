@@ -1,4 +1,7 @@
-import { categories, type ProductCategory } from "../../interfaces/ProductsInterfaces";
+import {
+  categories,
+  type ProductCategory,
+} from "../../interfaces/ProductsInterfaces";
 
 interface ProductFiltersProps {
   name: string;
@@ -28,18 +31,20 @@ export default function ProductFilters({
         name="name"
         placeholder="Search by name"
         value={name}
-        onChange={e => setName(e.target.value)}
+        onChange={(e) => setName(e.target.value)}
         className="border rounded px-3 py-2"
       />
       <select
         name="category"
         value={category}
-        onChange={e => setCategory(e.target.value as ProductCategory | "")}
+        onChange={(e) => setCategory(e.target.value as ProductCategory | "")}
         className="border rounded px-3 py-2"
       >
         <option value="">All Categories</option>
         {categories.map((category) => (
-          <option key={category} value={category}>{category}</option>
+          <option key={category} value={category}>
+            {category}
+          </option>
         ))}
       </select>
       <input
@@ -47,7 +52,9 @@ export default function ProductFilters({
         name="minPrice"
         placeholder="Min Price"
         value={minPrice}
-        onChange={e => setMinPrice(e.target.value === "" ? "" : Number(e.target.value))}
+        onChange={(e) =>
+          setMinPrice(e.target.value === "" ? "" : Number(e.target.value))
+        }
         className="border rounded px-3 py-2 w-24"
         min={0}
       />
@@ -56,7 +63,9 @@ export default function ProductFilters({
         name="maxPrice"
         placeholder="Max Price"
         value={maxPrice}
-        onChange={e => setMaxPrice(e.target.value === "" ? "" : Number(e.target.value))}
+        onChange={(e) =>
+          setMaxPrice(e.target.value === "" ? "" : Number(e.target.value))
+        }
         className="border rounded px-3 py-2 w-24"
         min={0}
       />

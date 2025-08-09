@@ -2,12 +2,12 @@ import {
   Home,
   ShoppingBag,
   Tag,
-  Package,
   User,
   ShoppingCart,
 } from "lucide-react";
 import { useCart } from "../../contexts/CartContext";
 import toast from "react-hot-toast";
+//This is purely to sell the idea of a real site, along with organically having the cart counter
 
 export default function NavBar() {
   const { cartCount } = useCart();
@@ -37,12 +37,6 @@ export default function NavBar() {
           className="flex items-center cursor-pointer gap-1 text-gray-700 hover:text-green-600 font-semibold px-3 py-2 rounded transition duration-300"
         >
           <Tag className="w-5 h-5" /> Deals
-        </button>
-        <button
-          onClick={buttonClickhandler}
-          className="flex items-center cursor-pointer gap-1 text-gray-700 hover:text-green-600 font-semibold px-3 py-2 rounded transition duration-300"
-        >
-          <Package className="w-5 h-5" /> Orders
         </button>
         <button
           onClick={buttonClickhandler}
